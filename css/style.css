@@ -1,21 +1,20 @@
 :root {
     --bg-color: #121212;
     --surface-color: #1e1e1e;
-    --primary-color: #bb86fc;
-    --secondary-color: #03dac6;
+    --primary-color: #fc86d5;
+    --secondary-color: #c803da;
     --text-primary: rgba(255, 255, 255, 0.87);
     --text-secondary: rgba(255, 255, 255, 0.6);
-    --error-color: #cf6679;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
     min-height: 100vh;
@@ -23,138 +22,84 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    line-height: 1.6;
+    margin-top: 25px;
 }
 
 .container {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    padding: 40px;
     width: 100%;
     max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-header {
-    text-align: center;
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--primary-color);
 }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-header p {
+.subtitle {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 14px;
+    margin-bottom: 32px;
 }
 
 .input-container {
-    position: relative;
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 #w3w-input {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    background-color: var(--surface-color);
-    border: none;
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 16px;
     color: var(--text-primary);
     outline: none;
     transition: all 0.3s ease;
+}
+
+#w3w-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
 }
 
 #w3w-input::placeholder {
     color: var(--text-secondary);
 }
 
-.input-border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
-}
-
-#w3w-input:focus + .input-border {
-    width: 100%;
-}
-
-.btn {
+#open-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    gap: 8px;
+    background-color: var(--primary-color);
     color: #000;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-.btn:active {
-    transform: translateY(0);
-}
-
-.result-container {
-    background-color: var(--surface-color);
-    border-radius: 4px;
-    padding: 1.5rem;
-    margin-top: 1rem;
-    opacity: 0;
-    transform: translateY(10px);
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
-.result-container.show {
-    opacity: 1;
+#open-btn:hover {
+    background-color: #d459ab;
+    transform: translateY(-1px);
+}
+
+#open-btn:active {
     transform: translateY(0);
 }
 
-.coordinates {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.coordinate {
-    flex: 1;
-}
-
-.label {
-    display: block;
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.value {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-footer {
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    margin-top: 2rem;
-}
-
-.hidden {
-    display: none;
+#open-btn svg {
+    color: #000;
 }
